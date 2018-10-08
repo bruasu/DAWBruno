@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+:root{
+    --botones:#A16EFF;
+    --botoneshover:#7190E2;
+    --textoblanco:white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+
+/*********************/
+.btn-header{
+    display: flex;
+    align-items:center;
+    height: 45px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.btn-header:hover a{
+    color: azure;
+}
+.btn-header:hover h4{
+    color: white;
+    background-color: transparent;
+}
+.btn-header:hover{
+    background: var(--botoneshover);
+}
+.btn-header>a{
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.btn-header>a>i{
+    font-size: 22px;
+    margin: auto;
+    margin-left:3px;
+    margin-right:3px;
+    padding-top: 6px;
+    
+}
+.btn-header>img{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.btn-header>h4{
+    display: inline-block;
+    background-color: #8BBCFF;
+    padding: 3px;
+    border-radius: 4px;
+    margin-right: 3px;
+    font-weight: 700;
+}
+/**********************/
+
+.btn{   
+    margin: 5px 1px 5px 5px;
+    padding: 6px;
+    background-color: var(--botones);
+    border-radius: 6px;
+    cursor: pointer;
+    border:none;
+    text-decoration: none;
+    color: var(--textoblanco);
+}
+.btn:hover{
+    background-color: var(--botoneshover);
+    box-shadow: 2px 2px 1px #AA4CF9;
+}
+.btn>p>a{
+    text-decoration: none;
+    color: var(--textoblanco);
+}
+
+/**********************/

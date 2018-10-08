@@ -1,0 +1,20 @@
+/******** FROM EN MODALES **********/
+
+.from-modal{
+	font-size: 1.2rem;
+	text-align: center;
+}
+.from-modal>input[type="text"]{
+	border-radius: 4px;
+	padding: 3px;
+	font-size: 18px;
+}
+.from-modal>input[type="text"]:focus{
+	border-color: #1646FB;
+}
+.from-modal span{
+	display: block;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 8px;
+}
