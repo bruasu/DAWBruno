@@ -21,5 +21,5 @@
 		<div class="nav-item"><a href="../usuarios/add_usuario.php"><i class="icon-users"></i><h4>Usuarios</h4></a></div>
 		<div class="nav-item"><a href="../categorias/addcategorias.php"><i class="icon-th-large"></i><h4>Categorias</h4></a></div>
 		<div class="nav-item"><a href="../productos/lista_productos.php"><i class="icon-th"></i><h4>Productos</h4></a></div>
-		<div class="nav-item"><a href="#"><i class="icon-briefcase"></i><h4>Ventas</h4></a></div>
+		<div class="nav-item"><a href="../ventas/listar_ventas.php"><i class="icon-briefcase"></i><h4>Ventas</h4></a></div>
 </nav>

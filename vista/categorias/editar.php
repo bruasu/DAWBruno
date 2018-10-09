@@ -22,7 +22,7 @@
 			<td><input type="submit" value="Agregar" class="btn" name="Enviar-modificar"></td>
 	</tr>	
 </form>
-
+<a href="addcategorias.php" class="btn btn-primary">Volver</a>
 
 
 
