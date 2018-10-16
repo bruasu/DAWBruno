@@ -2,11 +2,17 @@
 include_once 'menu_productos.php';
 include_once '../../modelo/Productos.class.php';
 $conectar=new Productos();
-$productos=$conectar->listar();
+
+if (isset($_POST['Enviar'])) {
+	$nombrebusqueda=filter_input(INPUT_POST,'Buscar');
+	$productos=$conectar->listar('where id_producto="'.$nombrebusqueda.'" or nombre like "%'.$nombrebusqueda.'%"');	
+}else {
+	$productos=$conectar->listar();
+}
 $lista='';
 //var_dump($productos);
 
-foreach ($productos as $key => $valor) {		
+foreach ($productos as $key => $valor) {
 		$lista.="<tr><td>$valor->id_producto</td>
 				<td>$valor->nombre</td>
 				<td><img src='../img/Productos/$valor->foto' style='height:50px'></td>
@@ -38,8 +44,8 @@ foreach ($productos as $key => $valor) {
         <th colspan='3'>Acciones</th>
       </tr>
     </thead>
-    <tbody>      
-        <?php echo $lista?>         
+    <tbody>
+        <?php echo $lista?>
     </tbody>
   </table>
 

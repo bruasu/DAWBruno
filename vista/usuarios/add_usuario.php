@@ -1,7 +1,12 @@
 <?php include_once '../estructura/header.php';
 	include_once '../../modelo/Usuarios.class.php';
 	$conectar=new Usuarios();
-	$resultado=$conectar->listar();
+	if (isset($_POST['Enviar'])) {
+		$nombrebusqueda=filter_input(INPUT_POST,'Buscar');
+		$resultado=$conectar->listar('where id_usuario="'.$nombrebusqueda.'" or nombre like "%'.$nombrebusqueda.'%" or apellido like "%'.$nombrebusqueda.'%"');
+	}else {
+		$resultado=$conectar->listar();
+	}
 	$listaUsuarios=null;
 	foreach ($resultado as $valor) {
 				$listaUsuarios.="<tr>
@@ -20,8 +25,12 @@
 				";
 			}
 ?>
-<div class="col-12">	
+<div class="col-12 d-flex">
 	 <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#formRegistro">Agregar Usuario</button>
+	 <form class="m-2" action="" method="post">
+	 	<input type="search" placeholder="Buscar Usuario" name="Buscar">
+		<input type="submit" name="Enviar" value="Buscar">
+	 </form>
 </div>
 <div class="d-flex justify-content-center mt-3 ">
 	<form action="add_usuario_ok.php" class="card col-12 col-md-8 collapse mb-2" method="post" id="formRegistro">
@@ -48,7 +57,7 @@
 	 	   	<div class="form-group">
 		    <label for="re-pwd">Repita la contraseña:</label>
 		    <input type="password" class="form-control" id="re-pwd" name="re_contrasena" required>
-	 	 </div>  	
+	 	 </div>
 	 	 <button type="submit" class="btn btn-primary" name="Enviar">Enviar</button>
 	</form>
 </div>

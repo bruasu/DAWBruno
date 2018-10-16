@@ -12,7 +12,7 @@ class Ventas{
 
 	public function __construct(){
 		$this->conexion= mysqli_connect('localhost','root','','shopfree')or die('NO CONECTO AL BD');
-        $this->tabela="ventas"; 
+        $this->tabela="ventas";
 		$this->status=1;
 	}
     public function __destruct(){
@@ -25,8 +25,8 @@ class Ventas{
     	$this->$key=$value;
     }
 
-    public function listar(){
-            $sql="SELECT ventas.*, usuarios.nombre as usuario FROM $this->tabela INNER JOIN usuarios ON $this->tabela.id_usuario=usuarios.id_usuario";
+    public function listar($complemento=""){
+            $sql="SELECT ventas.*, usuarios.nombre as usuario FROM $this->tabela INNER JOIN usuarios ON $this->tabela.id_usuario=usuarios.id_usuario ".$complemento;
             //echo $sql;
             $resultado= mysqli_query($this->conexion,$sql);
             $retorno=null;
@@ -42,8 +42,14 @@ class Ventas{
 
                 $retorno[]=$obj;
             }
-            return $retorno;            
+            return $retorno;
     }
+		public function modificar_status(){
+			$sql="UPDATE $this->tabela SET status='$this->status' WHERE id_ventas=$this->id_ventas";
+			var_dump($sql);
+			$resultado=mysqli_query($this->conexion, $sql);
+			return $resultado;
+		}
 
 
 }

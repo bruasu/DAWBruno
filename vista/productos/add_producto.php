@@ -36,15 +36,15 @@
 	 	   	<div class="form-group">
 		    <label for="P_promocional">Precio Promocional:</label>
 		    <input type="text" class="form-control" id="P_promocional" name="P_promocional">
-	 	 </div>	 	
+	 	 </div>
 	 	 <div class="form-group">
 		    <label for="cantidad">Cantidad:</label>
 		    <input type="number" class="form-control" id="cantidad" name="cantidad">
 	 	 </div>
 	 	 <div class='form-grup'>
-			<label for='categorias' >Categoria:</label>                
-            <select name="categoria" class='form-control'><?php echo $listaCategorias; ?></select>                  
-		</div>	  	
+			<label for='categorias' >Categoria:</label>
+            <select name="categoria" class='form-control'><?php echo $listaCategorias; ?></select>
+		</div>
 	 	 <button type="submit" class="btn btn-primary" name="Enviar">Enviar</button>
 	</form>
 </div>

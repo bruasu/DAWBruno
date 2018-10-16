@@ -5,9 +5,9 @@ class Categorias{
 	private $conexion; //conexion con el banco de datos
 	private $tabela;	//para saber cual son las tabelas de la classe
 
-        public function __construct() {            
+        public function __construct() {
             $this->conexion= mysqli_connect('localhost','root','','shopfree')or die('NO CONECTO AL BD');
-            $this->tabela="categorias";            
+            $this->tabela="categorias";
         }
         public function __destruct(){
         	unset($this->conexion);
@@ -19,7 +19,7 @@ class Categorias{
         	$this->$key=$value;
         }
         public function adicionar(){
-        	$sql="INSERT INTO $this->tabela(nome) VALUES ('$this->nome')";  
+        	$sql="INSERT INTO $this->tabela(nome) VALUES ('$this->nome')";
             $resultado= mysqli_query($this->conexion,$sql);
         	return $resultado;
         }
@@ -35,7 +35,7 @@ class Categorias{
 
                 $retorno[]=$obj;
             }
-            return $retorno;            
+            return $retorno;
         }
         public function borrar(){
             $sql="DELETE FROM $this->tabela WHERE id_categoria = $this->id_categoria";
@@ -47,15 +47,15 @@ class Categorias{
             //echo $sql;
             $resultado= mysqli_query($this->conexion,$sql);
             $retorno=null;
-            if ($res=mysqli_fetch_assoc($resultado)) {             
+            if ($res=mysqli_fetch_assoc($resultado)) {
                 $obj=new Categorias();
                 $obj->id_categoria=$res['id_categoria'];
                 $obj->nome=$res['nome'];
-                $retorno=$obj;                      
+                $retorno=$obj;
             }else{
                 $retorno=null;
             }
-            return $retorno;   
+            return $retorno;
         }
         public function editar(){
             $sql="UPDATE $this->tabela SET nome= '$this->nome' WHERE id_categoria= $this->id_categoria";

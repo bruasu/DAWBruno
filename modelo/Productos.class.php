@@ -15,9 +15,9 @@ class Productos{
 	private $conexion;
 	private $tabela;
 
-        public function __construct() {            
+        public function __construct() {
             $this->conexion= mysqli_connect('localhost','root','','shopfree')or die('NO CONECTO AL BD');
-            $this->tabela="productos";            
+            $this->tabela="productos";
         }
         public function __destruct(){
         	unset($this->conexion);
@@ -29,12 +29,12 @@ class Productos{
         	$this->$key=$value;
         }
         public function adicionar(){
-        	$sql="INSERT INTO $this->tabela(nombre,descripcion,foto,precio_compra,precio_venta,precio_promocional,cantidad,status,id_categoria) VALUES ('$this->nombre','$this->descripcion','$this->foto','$this->precio_compra','$this->precio_venta','$this->precio_promocional','$this->cantidad','$this->status','$this->id_categoria')";  
+        	$sql="INSERT INTO $this->tabela(nombre,descripcion,foto,precio_compra,precio_venta,precio_promocional,cantidad,status,id_categoria) VALUES ('$this->nombre','$this->descripcion','$this->foto','$this->precio_compra','$this->precio_venta','$this->precio_promocional','$this->cantidad','$this->status','$this->id_categoria')";
             $resultado= mysqli_query($this->conexion,$sql);
             return $resultado;
         }
         public function editar(){
-            $sql="UPDATE $this->tabela SET nombre='$this->nombre', descripcion='$this->descripcion', precio_compra='$this->precio_compra', precio_venta='$this->precio_venta', precio_promocional='$this->precio_promocional', cantidad='$this->cantidad', id_categoria='$this->id_categoria' WHERE id_producto=$this->id_producto";  
+            $sql="UPDATE $this->tabela SET nombre='$this->nombre', descripcion='$this->descripcion', precio_compra='$this->precio_compra', precio_venta='$this->precio_venta', precio_promocional='$this->precio_promocional', cantidad='$this->cantidad', id_categoria='$this->id_categoria' WHERE id_producto=$this->id_producto";
             //echo $sql;
             $resultado= mysqli_query($this->conexion,$sql);
             return $resultado;
@@ -45,7 +45,7 @@ class Productos{
             return $resultado;
         }
         public function listar($complemento=""){
-            $sql="SELECT $this->tabela.*,categorias.nome as nombre_categoria FROM $this->tabela inner join categorias on $this->tabela.id_categoria=categorias.id_categoria".$complemento;
+            $sql="SELECT $this->tabela.*,categorias.nome as nombre_categoria FROM $this->tabela inner join categorias on $this->tabela.id_categoria=categorias.id_categoria ".$complemento;
             //echo $sql;
             $resultado= mysqli_query($this->conexion,$sql);
             $retorno=null;
@@ -65,7 +65,7 @@ class Productos{
 
                 $retorno[]=$obj;
             }
-            return $retorno;            
+            return $retorno;
         }
         public function borrar(){
             $sql="DELETE FROM $this->tabela WHERE id_producto = $this->id_producto";
@@ -77,7 +77,7 @@ class Productos{
             //echo $sql;
             $resultado= mysqli_query($this->conexion,$sql);
             $retorno=null;
-            if ($res=mysqli_fetch_assoc($resultado)) {             
+            if ($res=mysqli_fetch_assoc($resultado)) {
                 $obj=new Productos();
                 $obj->id_producto=$res['id_producto'];
                 $obj->nombre=$res['nombre'];
@@ -90,11 +90,11 @@ class Productos{
                 $obj->status=$res['status'];
                 $obj->id_categoria=$res['id_categoria'];
                 $obj->nombre_categoria=$res['nombre_categoria'];
-                $retorno=$obj;                        
+                $retorno=$obj;
             }else{
                 $retorno=null;
             }
-            return $retorno;   
+            return $retorno;
         }
 
 
