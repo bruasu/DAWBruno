@@ -1,11 +1,19 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+	if ($_SESSION['user']['admin']==false) {
+		header('location:../usuarios/login.php');
+	}
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Administracion</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/stylebruno.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/adminstyle.css">
 	<link rel="stylesheet" type="text/css" href="../font/styles.css">
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
@@ -17,10 +25,11 @@
 	        <div class="header-titulo"><a href="../inicio/admin.php"><h3>Administración</h3></a></div>
 	    </div>
 	    <div class="header-nav">
-            <div class="btn-header"><img src="../img/01.jpg"><h4>Bruno Asunción</h4></div>
+					<a class="btn btn-danger" href="../../vista_cliente/contenido/home-page.php">Vista Cliente</a>
+					<div class="btn-header"><img src="../img/01.jpg"><h4>Bruno Asunción</h4></div>
 	        <div class="btn-header"><a href="#"><i class="icon-cogs"></i></a></div>
-	        <div class="btn-header"><a href="#"><i class="icon-power-off"></i></a></div>
-	    </div>	    
+	        <div class="btn-header"><a href="../usuarios/cerrar_session.php"><i class="icon-power-off"></i></a></div>
+	    </div>
 	</header>
-	<?php include_once '../estructura/nav-left.php';?>	
+	<?php include_once '../estructura/nav-left.php';?>
 	<div class="contenedor">
