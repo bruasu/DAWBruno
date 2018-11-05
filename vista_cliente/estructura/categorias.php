@@ -28,15 +28,16 @@
       <?php
         foreach ($categorias as $key => $value) {
           echo "<li class='nav-item'>
-            <a class='nav-link' href='#'>$value->nome</a>
+            <a class='nav-link' href='listar_productos.php?categoria=$value->nome'>$value->nome</a>
           </li>";
         }
       ?>
     </ul>
     <!-- Links -->
-    <form class="form-inline">
+    <form class="form-inline" method="get" action="listar_productos.php">
       <div class="md-form my-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+        <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name="buscar">
+        <input type="submit" class="d-none">
       </div>
     </form>
   </div>

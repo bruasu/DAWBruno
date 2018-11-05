@@ -16,5 +16,4 @@ if ($resultado_login) {
   header('location:login.php?error');
 }
 
-
 ?>

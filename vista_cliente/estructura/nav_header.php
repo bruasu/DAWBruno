@@ -3,8 +3,8 @@
   <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
-      <strong class="blue-text">MDB</strong>
+    <a class="navbar-brand waves-effect" href="home-page.php">
+      <strong class="blue-text">ShopFree</strong>
     </a>
 
     <!-- Collapse -->
