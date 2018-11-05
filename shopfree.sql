@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 09-Out-2018 às 01:42
--- Versão do servidor: 10.1.24-MariaDB
--- PHP Version: 7.1.6
+-- Host: localhost
+-- Generation Time: Nov 05, 2018 at 09:18 
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categorias`
+-- Table structure for table `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -34,7 +32,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `categorias`
+-- Dumping data for table `categorias`
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nome`) VALUES
@@ -42,22 +40,12 @@ INSERT INTO `categorias` (`id_categoria`, `nome`) VALUES
 (2, 'Celulares'),
 (3, 'Ropa'),
 (4, 'Camiseta'),
-(5, 'Pantalon'),
-(6, 'Reloj'),
-(7, 'Memoria'),
-(8, 'Informatica'),
-(9, 'notebook'),
-(10, 'Computadora de Mesa'),
-(13, 'prueba'),
-(14, 'prueba2'),
-(15, 'prueba3'),
-(17, 'prueba4'),
-(18, 'prueba5');
+(10, 'Computadora de Mesa');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `productos`
+-- Table structure for table `productos`
 --
 
 CREATE TABLE `productos` (
@@ -74,28 +62,23 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `productos`
+-- Dumping data for table `productos`
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `foto`, `precio_compra`, `precio_venta`, `precio_promocional`, `cantidad`, `status`, `id_categoria`) VALUES
-(1, 'lavadora Ultimation', 'producto para lavar las ropas que estan sucias', '', 9000, 14000, 12500, 15, 1, 1),
-(2, 'PC Pentium 4', 'computadora de ultima Generacion, Ultimo de los Ultimo', '', 7000, 11000, 9500, 40, 1, 10),
-(3, 'Celular J7 2018', 'celular con pantalla de 5.5\" con un procesador de 8 nucleos', '', 6000, 9000, 8200, 50, 1, 2),
-(4, 'Celular J1', 'Celular de pantalla tactil', '', 1200, 2500, 1999, 60, 1, 2),
-(5, 'Camisetas', 'tamaño P M G', '', 100, 190, 150, 20, 1, 4),
-(6, 'Pantalones Premium', 'Tamaño P M G', '', 150, 230, 180, 40, 1, 5),
-(7, 'lavadora', 'producto para lavar las ropas que estan sucias', '', 8000, 12000, 10500, 10, 1, 1),
-(8, 'PC Pentium casi 5', 'computadora de ultima Generacion, Ultimo de los Ultimo', '', 15000.1, 22000.2, 19950, 40, 1, 10),
-(9, 'Celular J7', 'celular con pantalla de 5.5\" con un procesador de 8 nucleos', '', 5000, 8000, 7200, 50, 1, 2),
-(10, 'Celular J3', 'Celular de pantalla tactil', '', 1400, 2700, 2200, 60, 1, 2),
-(11, 'Camisetas2', 'tamaño P M G', '', 100, 190, 150, 20, 1, 4),
-(12, 'Pantalones', 'Tamaï¿½o P M G', '', 100, 187, 150, 40, 1, 10),
-(52, 'prueba4', 'asdddas', '1539041901.jpg', 56, 55, 65, 56, 1, 6);
+(1, 'lavadora Ultimation', 'producto para lavar las ropas que estan sucias', '1541442953.jpg', 9000, 14000, 12500, 15, 1, 1),
+(4, 'Celular J1', 'Celular de pantalla tactil', '1541442958.jpg', 1200, 2500, 1999, 60, 1, 2),
+(5, 'Camisetas', 'tamaño P M G', '1541442963.jpg', 100, 190, 150, 20, 1, 4),
+(7, 'lavadora', 'producto para lavar las ropas que estan sucias', '1541442973.jpg', 8000, 12000, 10500, 10, 1, 1),
+(8, 'PC Pentium casi 5', 'computadora de ultima Generacion, Ultimo de los Ultimo', '1541442986.jpg', 15000.1, 22000.2, 19950, 40, 1, 10),
+(9, 'Celular J7', 'celular con pantalla de 5.5" con un procesador de 8 nucleos', '1541442993.jpg', 5000, 8000, 7200, 50, 1, 2),
+(11, 'Camisetas2', 'tamaño P M G', '1541442999.jpg', 100, 190, 150, 20, 1, 4),
+(12, 'Pantalones', 'Tamaï¿½o P M G', '1541443019.jpg', 100, 187, 150, 40, 1, 10);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `productos_ventas`
+-- Table structure for table `productos_ventas`
 --
 
 CREATE TABLE `productos_ventas` (
@@ -106,7 +89,7 @@ CREATE TABLE `productos_ventas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `productos_ventas`
+-- Dumping data for table `productos_ventas`
 --
 
 INSERT INTO `productos_ventas` (`id_productos`, `id_ventas`, `cantidad`, `valor_producto`) VALUES
@@ -124,7 +107,7 @@ INSERT INTO `productos_ventas` (`id_productos`, `id_ventas`, `cantidad`, `valor_
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -141,11 +124,11 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `contrasena`, `email`, `fecha_nacimiento`, `telefono`, `celular`, `status`, `tipo`) VALUES
-(1, 'Bruno', 'Asuncion', '12345678', 'bruasu@gmail.com', '1990-03-24', '', '', '1', '2'),
+(1, 'Bruno', 'Asuncion', '12345678', 'bruasu@gmail.com', '1990-03-24', '', '', '1', 'admin'),
 (2, 'Rafael', 'Asuncion', '12345678', 'bruasu1@gmail.com', '1990-03-24', '', '', '1', '1'),
 (3, 'Karen', 'Lemos', '12345678', 'bruasu2@gmail.com', '1990-03-24', '', '', '1', '1'),
 (4, 'Leticia', 'Da Silva', '12345678', 'bruasu3@gmail.com', '1990-03-24', '', '', '1', '1'),
@@ -162,7 +145,7 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `contrasena`, `email
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ventas`
+-- Table structure for table `ventas`
 --
 
 CREATE TABLE `ventas` (
@@ -175,7 +158,7 @@ CREATE TABLE `ventas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `ventas`
+-- Dumping data for table `ventas`
 --
 
 INSERT INTO `ventas` (`id_ventas`, `id_usuario`, `valor_total`, `fecha_compra`, `direccion_entrega`, `status`) VALUES
@@ -256,24 +239,23 @@ ALTER TABLE `ventas`
 --
 
 --
--- Limitadores para a tabela `productos`
+-- Constraints for table `productos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`);
 
 --
--- Limitadores para a tabela `productos_ventas`
+-- Constraints for table `productos_ventas`
 --
 ALTER TABLE `productos_ventas`
   ADD CONSTRAINT `productos_ventas_ibfk_1` FOREIGN KEY (`id_productos`) REFERENCES `productos` (`id_producto`),
   ADD CONSTRAINT `productos_ventas_ibfk_2` FOREIGN KEY (`id_ventas`) REFERENCES `ventas` (`id_ventas`);
 
 --
--- Limitadores para a tabela `ventas`
+-- Constraints for table `ventas`
 --
 ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
