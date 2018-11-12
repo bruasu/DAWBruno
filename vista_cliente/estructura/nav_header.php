@@ -23,24 +23,23 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">About MDB</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect" href="https://mdbootstrap.com/getting-started/" target="_blank">Free download</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
-        </li>
       </ul>
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
           <a class="nav-link waves-effect">
-            <span class="badge red z-depth-1 mr-1"> 1 </span>
+            <span class="badge red z-depth-1 mr-1">
+              <?php
+                if (isset($_SESSION['carro_add'])) {
+                  echo count($_SESSION['carro_add']);
+                }else {
+                  echo "0";
+                }
+              ?>
+             </span>
             <i class="fa fa-shopping-cart"></i>
-            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            <span class="clearfix d-none d-sm-inline-block"> Carro </span>
           </a>
         </li>
       </ul>

@@ -1,3 +1,7 @@
+<?php
+  session_cache_expire(60);
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
