@@ -28,7 +28,7 @@
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
-          <a class="nav-link waves-effect">
+          <a class="nav-link waves-effect" href="carro.php">
             <span class="badge red z-depth-1 mr-1">
               <?php
                 if (isset($_SESSION['carro_add'])) {
