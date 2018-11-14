@@ -1,8 +1,10 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])) {
-  if ($_SESSION['user']['admin']==true) {
+  if ($_SESSION['user']['tipo']=='admin') {
     header('location:../inicio/admin.php');
+  }else {
+    header('location:../../vista_cliente/contenido/home-page.php');
   }
 }
 

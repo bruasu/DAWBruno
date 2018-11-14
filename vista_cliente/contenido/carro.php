@@ -80,7 +80,7 @@
 </form>
 <?php }else {
 ?>
-<div class="d-flex justify-content-center">  
+<div class="d-flex justify-content-center">
   <a href="#" class="btn btn-primary">Iniciar Sesion</a>
   <a href="#" class="btn btn-primary">Registrarse</a>
 </div>
@@ -88,6 +88,7 @@
 
 
 <?php
+var_dump($_SESSION);
 include_once '../estructura/footer_home.php';
 
 ?>

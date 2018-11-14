@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['user'])) {
-	if ($_SESSION['user']['admin']==false) {
+	if (!$_SESSION['user']['tipo']=='admin') {
 		header('location:../usuarios/login.php');
 	}
 }

@@ -91,7 +91,7 @@ class Usuarios{
             return $resultado;
         }
 				public function login(){
-					$sql="SELECT * FROM $this->tabela where email='$this->email' and contrasena='$this->contrasena' and tipo='admin'";
+					$sql="SELECT * FROM $this->tabela where email='$this->email' and contrasena='$this->contrasena'";
 					echo $sql;
 					$resultado= mysqli_query($this->conexion,$sql);
 					$retorno=null;

@@ -10,8 +10,13 @@ $conectar->contrasena=filtrarPost('contrasena');
 $resultado_login=$conectar->login();
 
 if ($resultado_login) {
-  $_SESSION['user']['admin']=true;
-  header('location:../ventas/listar_ventas.php');
+  $_SESSION['user']['tipo']=$resultado_login->tipo;
+  $_SESSION['user']['nombre']=$resultado_login->nombre;
+  if ($_SESSION['user']['tipo']=='admin') {
+    header('location:../inicio/admin.php');
+  }else {
+    header('location:login.php');
+  }
 }else{
   header('location:login.php?error');
 }
