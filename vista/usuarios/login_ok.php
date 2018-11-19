@@ -12,6 +12,7 @@ $resultado_login=$conectar->login();
 if ($resultado_login) {
   $_SESSION['user']['tipo']=$resultado_login->tipo;
   $_SESSION['user']['nombre']=$resultado_login->nombre;
+  $_SESSION['user']['id_usuario']=$resultado_login->id_usuario;
   if ($_SESSION['user']['tipo']=='admin') {
     header('location:../inicio/admin.php');
   }else {

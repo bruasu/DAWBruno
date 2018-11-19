@@ -76,19 +76,17 @@
 <?php if (isset($_SESSION['user'])) {
 ?>
 <form class="d-flex justify-content-center" action="" method="post">
-  <button type="submit" class="btn btn-primary" name="comprar">Realizar la Compra</button>
+  <a type="submit" href="realizar_compra_ok.php?vt=<?php echo $Glob_ValorTotal; ?>" class="btn btn-primary" name="comprar">Realizar la Compra</a>
 </form>
 <?php }else {
 ?>
 <div class="d-flex justify-content-center">
-  <a href="#" class="btn btn-primary">Iniciar Sesion</a>
+  <a href="../../vista/usuarios/login.php" class="btn btn-primary">Iniciar Sesion</a>
   <a href="#" class="btn btn-primary">Registrarse</a>
 </div>
 <?php } ?>
 
 
 <?php
-var_dump($_SESSION);
 include_once '../estructura/footer_home.php';
-
 ?>
