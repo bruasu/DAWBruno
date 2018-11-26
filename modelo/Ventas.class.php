@@ -13,7 +13,7 @@ class Ventas{
 	public function __construct(){
 		$this->conexion= mysqli_connect('localhost','root','','shopfree')or die('NO CONECTO AL BD');
         $this->tabela="ventas";
-		$this->status=1;
+		$this->status=0;
 	}
     public function __destruct(){
     	unset($this->conexion);
@@ -46,9 +46,15 @@ class Ventas{
     }
 		public function modificar_status(){
 			$sql="UPDATE $this->tabela SET status='$this->status' WHERE id_ventas=$this->id_ventas";
-			var_dump($sql);
+			//var_dump($sql);
 			$resultado=mysqli_query($this->conexion, $sql);
 			return $resultado;
+		}
+		public function add_venta(){
+				$sql="INSERT INTO $this->tabela(id_ventas,id_usuario,valor_total,fecha_compra,direccion_entrega,status) VALUES
+				('$this->id_ventas','$this->id_usuario','$this->valor_total','$this->fecha_compra','$this->direccion_entrega','$this->status')";
+				$resultado= mysqli_query($this->conexion,$sql);
+				return $resultado;
 		}
 
 

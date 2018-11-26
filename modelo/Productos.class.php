@@ -10,7 +10,7 @@ class Productos{
 	private $cantidad=0;
 	private $status=true;
 	private $id_categoria;
-    private $nombre_categoria;
+  private $nombre_categoria;
 
 	private $conexion;
 	private $tabela;
@@ -96,6 +96,29 @@ class Productos{
             }
             return $retorno;
         }
+				public function retornarunicoID(){
+						$sql="SELECT * FROM $this->tabela WHERE id_producto = $this->id_producto";
+						//echo $sql;
+						$resultado= mysqli_query($this->conexion,$sql);
+						$retorno=null;
+						if ($res=mysqli_fetch_assoc($resultado)) {
+								$obj=new Productos();
+								$obj->id_producto=$res['id_producto'];
+								$obj->nombre=$res['nombre'];
+								$obj->descripcion=$res['descripcion'];
+								$obj->foto=$res['foto'];
+								$obj->precio_compra=$res['precio_compra'];
+								$obj->precio_venta=$res['precio_venta'];
+								$obj->precio_promocional=$res['precio_promocional'];
+								$obj->cantidad=$res['cantidad'];
+								$obj->status=$res['status'];
+								$obj->id_categoria=$res['id_categoria'];
+								$retorno=$obj;
+						}else{
+								$retorno=null;
+						}
+						return $retorno;
+				}
 
 
 
