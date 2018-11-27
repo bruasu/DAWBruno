@@ -56,6 +56,23 @@ class Ventas{
 				$resultado= mysqli_query($this->conexion,$sql);
 				return $resultado;
 		}
+		public function get_ventas_user(){
+			$sql="SELECT * FROM $this->tabela where id_usuario=$this->id_usuario";
+			$resultado= mysqli_query($this->conexion,$sql);
+			$retorno=null;
+			while($res = mysqli_fetch_assoc($resultado)){
+					$obj=new Ventas();
+					$obj->id_usuario=$res['id_usuario'];
+					$obj->id_ventas=$res['id_ventas'];
+					$obj->valor_total=$res['valor_total'];
+					$obj->fecha_compra=$res['fecha_compra'];
+					$obj->direccion_entrega=$res['direccion_entrega'];
+					$obj->status=$res['status'];
+
+					$retorno[]=$obj;
+			}
+			return $retorno;
+		}
 
 
 }

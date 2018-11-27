@@ -63,6 +63,21 @@
           }
         } ?>
         </li>
+        <li>
+          <?php
+            if (isset($_SESSION['user'])) {
+              include_once '../../modelo/Ventas.class.php';
+              $ventas=new Ventas();
+              $ventas->id_usuario=$_SESSION['user']['id_usuario'];
+              $result=$ventas->get_ventas_user();
+              if ($result>0) {
+                ?>
+                <a href="compras.php" class="btn btn-outline-info btn-sm">Compras</a>
+                <?php
+              }
+            }
+          ?>
+        </li>
       </ul>
     </div>
 
