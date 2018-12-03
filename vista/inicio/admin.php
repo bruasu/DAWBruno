@@ -10,9 +10,8 @@
 						$lista.="<tr><td>$valor->id_ventas</td>
 								<td>$valor->usuario</td>
 								<td>$valor->valor_total</td>
-								<td>$valor->fecha_compra</td>
+								<td>".date('d/m/Y',$valor->fecha_compra)."</td>
 								<td>$valor->direccion_entrega</td>
-								<td>$valor->status</td>
 								<td><a href='modificar_status.php?status=$valor->status&id=$valor->id_ventas'>Modificar Status</a></td>
 								</tr>";
 							}
@@ -26,7 +25,6 @@
 	        <th>Valor Total</th>
 	        <th>Fecha de Compra</th>
 	        <th>Domicilio</th>
-	        <th>status</th>
 	        <th >Acciones</th>
 	      </tr>
 	    </thead>
@@ -34,6 +32,7 @@
 	        <?php echo $lista?>
 	    </tbody>
 	  </table>
+
 
 
 	<?php include_once '../estructura/pie_de_pagina.php';?>

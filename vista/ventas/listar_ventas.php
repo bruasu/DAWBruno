@@ -12,13 +12,21 @@ if (isset($_POST['Enviar'])) {
 $lista='';
 //var_dump($productos);
 
+function status($status){
+	if ($status) {
+		return "Concluida";
+	}else {
+		return "<strong>Pendiente</strong>";
+	}
+}
+
 foreach ($ventas as $key => $valor) {
 		$lista.="<tr><td>$valor->id_ventas</td>
 				<td>$valor->usuario</td>
 				<td>$valor->valor_total</td>
 				<td>$valor->fecha_compra</td>
 				<td>$valor->direccion_entrega</td>
-				<td>$valor->status</td>
+				<td>".status($valor->status)."</td>
 				<td><a href='editar_venta.php?id=$valor->id_ventas'>Editar</a></td>
 				<td><a href='eliminar_venta.php?id=$valor->id_ventas'>Eliminar</a></td>
 				<td><a href='modificar_status.php?status=$valor->status&id=$valor->id_ventas'>Modificar Status</a></td>
